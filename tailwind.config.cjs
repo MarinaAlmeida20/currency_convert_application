@@ -1,7 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  purge: ["./public/**/*.html", "./src/**/*.{js,jsx,ts,tsx,vue}"],
-  darkMode: false, // or 'media' or 'class'
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx,html}",
+    "./src/components/**/*jsx",
+    "./*/*html",
+  ],
   theme: {
     minHeight: {
       50: "50px",
@@ -11,5 +14,9 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require("tailwindcss"),
+    require("postcss"),
+    require("autoprefixer"),
+  ],
 };
